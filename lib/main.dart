@@ -34,6 +34,8 @@ import './services/p2p/p2p_settings_service.dart';
 import './services/discord/discord_rpc_service.dart';
 import './widgets/updater/update_dialog.dart';
 
+import './utils/remote_shortcuts.dart';
+
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
@@ -145,10 +147,9 @@ class _PlayTorrioAppState extends State<PlayTorrioApp>
           scrollBehavior: const MaterialScrollBehavior().copyWith(
             overscroll: false,
           ),
-          home: const HomePage(),
+          home: RemoteShortcuts(child: const HomePage()),
         );
       },
     );
   }
 }
-
